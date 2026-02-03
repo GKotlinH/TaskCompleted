@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TaskCompletedTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TaskCompletedScreen()
+                    TaskCompletedScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -39,9 +39,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TaskCompletedScreen() {
+fun TaskCompletedScreen(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .fillMaxHeight(),
         verticalArrangement = Arrangement.Center,
